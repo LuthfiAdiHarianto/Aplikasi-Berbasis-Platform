@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+</head>
+<body>
+    <center>
+        <h2>Data Mahasiswa</h2>
+        <form action="#" method="POST">
+            <table border="0">
+                <tr>
+                    <td><label for="nim_id">NIM :</label></td>
+                    <td><input type="text" name="nim_input" id="nim_id"></td>
+                </tr>
+                <tr>
+                    <td><label for="nama_id">Nama :</label></td>
+                    <td><input type="text" name="nama_input" id="nama_id"></td>
+                </tr>
+                <tr>
+                    <td><label for="tgl_lahir_id">Tgl Lahir (dd-mm-yyyy) :</label></td>
+                    <td>
+                        <input type="text" name="tgl_lahir_input" id="tgl_lahir_id" value="dd/mm/yyyy" style="width: 80px;">
+                        <span>&#128197;</span> </td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin :</td>
+                    <td>
+                        <input type="radio" name="jk_input" id="laki" value="Laki-Laki">
+                        <label for="laki">Laki-Laki</label>
+                        <input type="radio" name="jk_input" id="perempuan" value="Perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;"><label for="alamat_id">Alamat di Bandung :</label></td>
+                    <td><textarea id="alamat_id" name="alamat_input" rows="4" cols="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="tinggal_id">Tinggal di :</label></td>
+                    <td>
+                        <select name="tinggal_input" id="tinggal_id">
+                            <option value="" selected>--pilih--</option>
+                            <option value="kos">Kos/kontrakan</option>
+                            <option value="saudara">Rumah saudara</option>
+                            <option value="orangtua">Rumah orang tua</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">Pilih 2 hobi yang paling disukai :</td>
+                    <td>
+                        <input type="checkbox" name="hobi_input" id="science" value="Science">
+                        <label for="science">Science</label><br>
+                        <input type="checkbox" name="hobi_input" id="technology" value="Technology">
+                        <label for="technology">Technology</label><br>
+                        <input type="checkbox" name="hobi_input" id="art" value="Art">
+                        <label for="art">Art</label><br>
+                        <input type="checkbox" name="hobi_input" id="sport" value="Sport">
+                        <label for="sport">Sport</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left">
+                        <br>
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>
