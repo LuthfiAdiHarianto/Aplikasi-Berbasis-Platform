@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Layout 1</title>
+    <style>
+        body {
+            background: #dcdcdc;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 650px;
+            background: #efefef;
+            padding: 25px;
+            border: 2px solid #999;
+        }
+
+        /* TOP SECTION */
+        .top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 120px;
+            height: 90px;
+            border: 2px solid #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu {
+            width: 140px;
+        }
+
+        .menu div {
+            height: 18px;
+            border: 1px solid #666;
+            margin-bottom: 8px;
+        }
+
+        /* BLACK LINE */
+        .divider {
+            height: 6px;
+            background: black;
+            margin: 25px 0;
+        }
+
+        /* NAV */
+        .nav {
+            border: 2px solid #666;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* CONTENT */
+        .content {
+            margin-top: 20px;
+            border: 2px solid #666;
+            height: 320px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #999 0px,
+                #999 1px,
+                transparent 1px,
+                transparent 20px
+            );
+        }
+
+        /* FOOTER SMALL BOX */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .small-box {
+            width: 90px;
+            height: 70px;
+            background: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top">
+        <div class="logo">Logo</div>
+
+        <div class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="nav">Navigasi</div>
+
+    <div class="content"></div>
+
+    <div class="divider"></div>
+
+    <div class="footer">
+        <div class="small-box"></div>
+        <div class="small-box"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

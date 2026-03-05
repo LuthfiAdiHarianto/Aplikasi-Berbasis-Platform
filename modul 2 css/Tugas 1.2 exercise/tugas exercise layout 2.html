@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Layout 2</title>
+    <style>
+
+        body {
+            background: #dcdcdc;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 650px;
+            background: #efefef;
+            padding: 25px;
+            border: 2px solid #999;
+        }
+
+        /* NAVIGATION */
+        .nav {
+            border: 2px solid #666;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* BLACK LINE */
+        .divider {
+            height: 6px;
+            background: black;
+            margin: 25px 0;
+        }
+
+        /* MAIN AREA */
+        .main {
+            display: flex;
+            gap: 25px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 120px;
+        }
+
+        .side-box {
+            height: 45px;
+            background: #888;
+            margin-bottom: 35px;
+        }
+
+        /* CONTENT */
+        .content {
+            flex: 1;
+            border: 2px solid #666;
+            height: 350px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #999 0px,
+                #999 1px,
+                transparent 1px,
+                transparent 20px
+            );
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="nav">Navigasi</div>
+
+    <div class="divider"></div>
+
+    <div class="main">
+
+        <div class="sidebar">
+            <div class="side-box"></div>
+            <div class="side-box"></div>
+            <div class="side-box"></div>
+            <div class="side-box"></div>
+        </div>
+
+        <div class="content"></div>
+
+    </div>
+
+    <div class="divider"></div>
+
+</div>
+
+</body>
+</html>
