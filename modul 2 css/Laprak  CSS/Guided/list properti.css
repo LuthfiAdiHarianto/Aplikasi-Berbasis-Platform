@@ -1,0 +1,12 @@
+Ul.listsatu {
+ background-color: tomato;
+ margin: 10px 5px 10px 5px;
+ list-style-type: lower-alpha;
+ list-style-position: inside;
+}
+ol.listdua {
+ background-color: lightblue;
+ list-style-type: lower-roman;
+ padding: 5px 5px 15px 15px;
+ list-style-position: inside;
+}

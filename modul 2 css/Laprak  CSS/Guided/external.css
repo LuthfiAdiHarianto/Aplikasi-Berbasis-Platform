@@ -1,0 +1,18 @@
+/*Selector dengan Elemen 
+HTML*/
+p {
+ text-align: center;
+ color: red;
+}
+/*Selector dengan Id Elemen 
+HTML*/
+#para1 {
+ text-align: center;
+ color: red;
+}
+/*Selector dengan Class Elemen 
+HTML*/
+p.center {
+ text-align: center;
+ color: red;
+}
