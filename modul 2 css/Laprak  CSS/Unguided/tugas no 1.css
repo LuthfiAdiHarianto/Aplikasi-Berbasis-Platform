@@ -1,0 +1,94 @@
+/* Background halaman */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container form */
+.form-container {
+    width: 420px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Judul form */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Label */
+label {
+    display: inline-block;
+    width: 120px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Input text, password, email */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    width: 220px;
+    padding: 6px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Hover input */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0984e3;
+    outline: none;
+}
+
+/* Radio dan checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+}
+
+/* Tombol */
+button {
+    margin-top: 15px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tombol cancel */
+.cancel-btn {
+    background-color: #d63031;
+    color: white;
+}
+
+/* Tombol submit */
+.submit-btn {
+    background-color: #00b894;
+    color: white;
+}
+
+/* Hover tombol */
+button:hover {
+    opacity: 0.85;
+}
+
+/* Spasi antar baris */
+.form-group {
+    margin-bottom: 8px;
+}
