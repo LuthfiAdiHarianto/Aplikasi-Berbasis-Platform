@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkah Ramadan - Ambil THR Digitalmu</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stars" id="stars"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="lantern" style="left: 15%; animation-delay: 0s;">🏮</div>
+    <div class="lantern" style="right: 15%; animation-delay: 1.5s;">🏮</div>
+
+    <main class="main-container">
+        <header class="header">
+            <div class="arabic-title">رمضان كريم</div>
+            <h1>Mari Berbagi Kebahagiaan</h1>
+            <p>Selamat menunaikan ibadah puasa. Klik tombol di bawah untuk membuka keberuntungan THR spesialmu!</p>
+        </header>
+        
+        <div class="action-area">
+            <div class="gift-icon-container">
+                <span class="gift-icon">🎁</span>
+            </div>
+            <button class="btn-claim" id="claimBtn">
+                <span class="btn-text">Ambil THR Digital</span>
+                <span class="btn-icon">✨</span>
+            </button>
+            <p class="status-text" id="statusText">Ketuk hadiah untuk melihat isinya!</p>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modalBox">
+            <div class="modal-header">
+                <div class="crescent">🌙</div>
+                <h2>Barakallah!</h2>
+                <p>Selamat! THR Spesialmu telah terambil.</p>
+            </div>
+            
+            <div class="thr-amount-card">
+                <span class="label">Nominal THR Anda</span>
+                <div class="amount-value" id="thrAmount">Rp 0</div>
+            </div>
+
+            <div class="modal-body">
+                <p>Semoga berkah dan membawa kebahagiaan di hari kemenangan yang fitri.</p>
+            </div>
+            
+            <footer class="modal-footer">
+                <button class="close-btn" id="closeModal">Terima Kasih</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="integrasi.js"></script>
+</body>
+</html>
