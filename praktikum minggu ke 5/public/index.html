@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi CRUD Inventaris</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="#">Inventaris App</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="main-content">
+        <div id="page-table">
+            <div class="d-flex justify-content-between mb-3">
+                <h3>Daftar Barang</h3>
+                <button class="btn btn-primary" onclick="showForm()">+ Tambah Barang</button>
+            </div>
+            <div class="card p-3">
+                <table id="myTable" class="table table-striped w-100">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <div id="page-form" style="display:none;">
+            <h3 id="form-title">Tambah Barang</h3>
+            <div class="card p-4">
+                <form id="itemForm">
+                    <input type="hidden" id="itemId">
+                    <div class="mb-3">
+                        <label class="form-label">Nama Barang</label>
+                        <input type="text" class="form-control" id="nama" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-control" id="kategori">
+                            <option value="Elektronik">Elektronik</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Alat Tulis">Alat Tulis</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Stok</label>
+                        <input type="number" class="form-control" id="stok" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Simpan</button>
+                    <button type="button" class="btn btn-secondary" onclick="showTable()">Batal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    let table;
+
+    $(document).ready(function() {
+        // Inisialisasi DataTables dengan format JSON
+        table = $('#myTable').DataTable({
+            ajax: '/api/items',
+            columns: [
+                { data: 'nama' },
+                { data: 'kategori' },
+                { data: 'stok' },
+                { 
+                    data: 'id',
+                    render: function(data, type, row) {
+                        return `
+                            <button class="btn btn-sm btn-warning" onclick="editItem('${data}', '${row.nama}', '${row.kategori}', ${row.stok})">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteItem(${data})">Hapus</button>
+                        `;
+                    }
+                }
+            ]
+        });
+
+        // Submit Form (Create & Update)
+        $('#itemForm').on('submit', function(e) {
+            e.preventDefault();
+            const id = $('#itemId').val();
+            const data = {
+                nama: $('#nama').val(),
+                kategori: $('#kategori').val(),
+                stok: $('#stok').val()
+            };
+
+            const method = id ? 'PUT' : 'POST';
+            const url = id ? `/api/items/${id}` : '/api/items';
+
+            $.ajax({
+                url: url,
+                method: method,
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(res) {
+                    alert(res.message);
+                    showTable();
+                    table.ajax.reload();
+                }
+            });
+        });
+    });
+
+    // Navigasi Halaman
+    function showForm() {
+        $('#page-table').hide();
+        $('#page-form').show();
+        $('#itemForm')[0].reset();
+        $('#itemId').val('');
+        $('#form-title').text('Tambah Barang');
+    }
+
+    function showTable() {
+        $('#page-form').hide();
+        $('#page-table').show();
+    }
+
+    function editItem(id, nama, kategori, stok) {
+        showForm();
+        $('#form-title').text('Edit Barang');
+        $('#itemId').val(id);
+        $('#nama').val(nama);
+        $('#kategori').val(kategori);
+        $('#stok').val(stok);
+    }
+
+    function deleteItem(id) {
+        if(confirm('Yakin ingin menghapus?')) {
+            $.ajax({
+                url: `/api/items/${id}`,
+                method: 'DELETE',
+                success: function(res) {
+                    table.ajax.reload();
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
