@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profile - Luthfi Adi Harianto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth; /* Tambahan: agar scroll halus */
+        }
+
+        /* Background Kota Pati */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('Tugu-Bandeng-Kabupaten-Pati.jpg'); /* Gambar ikonik Gerbang Pati */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: #0d6efd;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px; /* Tambahan: agar ujung garis tumpul */
+        }
+
+        /* --- JGN HAPUS: INI BAGIAN UTAMA UNTUK MERAPIKAN FOTO ---
+           Saya hanya menambahkan CSS di sini untuk menargetkan img
+           di dalam struktur col-md-5 text-center yang sudah ada.
+        */
+        .col-md-5.text-center img {
+            width: 250px;           /* Ukuran lebar foto tetap */
+            height: 250px;          /* Ukuran tinggi foto tetap (sama dg width) */
+            object-fit: cover;      /* FOTO TIDAK GEpeng, dipotong pas di tengah */
+            object-position: center; /* Fokus pemotongan di tengah */
+            border-radius: 50%;      /* Lingkaran sempurna */
+            
+            /* Bingkai dan Bayangan yang lebih estetis */
+            border: 8px solid white !important; /* Bingkai putih tebal */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important; /* Bayangan lembut namun tegas */
+            
+            /* Tambahan: animasi halus saat hover */
+            transition: transform 0.3s ease;
+        }
+
+        .col-md-5.text-center img:hover {
+            transform: scale(1.05); /* Sedikit membesar saat kursor di atasnya */
+        }
+        /* --------------------------------------------------------- */
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Bayangan default kartu */
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+        }
+
+        .badge-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            padding: 0.5em 1em; /* Tambahan: ruang badge lebih pas */
+        }
+        
+        /* Merapikan Footer */
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Halo, Saya Luthfi Adi Harianto Mahasiswa Telkom University Purwokerto</h1>
+            <p class="lead mb-4">Informatics Engineering Student | Dari Pati untuk Inovasi Digital</p>
+            <a href="#prestasi" class="btn btn-primary btn-lg px-5 rounded-pill shadow">Lihat Pencapaian</a>
+        </div>
+    </header>
+
+    <section id="biodata" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 text-center">
+                    <img src="pas foto.jpg" class="rounded-circle shadow-lg border border-5 border-light" alt="Profile Picture">
+                </div>
+                <div class="col-md-7 mt-4 mt-md-0">
+                    <h2 class="fw-bold">Biodata</h2>
+                    <hr class="w-25 mb-4" style="height:3px; background-color:#0d6efd; border:none; opacity:1;">
+                    <p class="text-secondary">Saya adalah seorang pengembang yang berfokus pada desain pengalaman pengguna, front end development, dan sedang belajar membuat game . Berasal dari <strong>Pati</strong>, saya membawa semangat kerja keras dan ketelitian dalam setiap proyek teknologi yang saya bangun.</p>
+                    <div class="row mt-4 g-3">
+                        <div class="col-6">
+                            <p class="mb-1 text-muted">Asal</p>
+                            <p class="fw-bold">Kota Pati</p>
+                            <p class="mb-1 text-muted">Kampus</p>
+                            <p class="fw-bold">Telkom University Purwokerto</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-muted">Fokus</p>
+                            <p class="fw-bold">UI/UX & Data Science</p>
+                            <p class="mb-1 text-muted">Status</p>
+                            <p class="fw-bold badge bg-success rounded-pill px-3">Aktif Mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prestasi" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Prestasi Nasional</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="card h-100 shadow-sm border-start border-primary border-5 p-3">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-3">2024</span>
+                            <h5 class="card-title fw-bold">Lolos Lomba Nasional Gemastik XVII</h5>
+                            <p class="card-text text-muted">Divisi Penambangan Data (Data Mining).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card h-100 shadow-sm border-start border-success border-5 p-3">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-3">2025</span>
+                            <h5 class="card-title fw-bold">Lolos Lomba Nasional Gemastik XVIII</h5>
+                            <p class="card-text text-muted">Divisi Desain Pengalaman Pengguna (UX Design) & Karya Tulis Ilmiah TIK.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyek" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center section-title">Proyek Unggulan</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border p-3 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="badge bg-secondary badge-category mb-3">Desain Pengalaman Pengguna</h6>
+                            <h5 class="fw-bold">Melodean</h5>
+                            <p class="text-muted small mb-0">Solusi digital untuk manajemen pembelajaran interaktif.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border p-3 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="badge bg-secondary badge-category mb-3">Desain Pengalaman Pengguna</h6>
+                            <h5 class="fw-bold">Nusantara Legacy</h5>
+                            <p class="text-muted small mb-0">Platform arsip dan pelestarian budaya berbasis web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border p-3 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="badge bg-secondary badge-category mb-3">Game Dev</h6>
+                            <h5 class="fw-bold">Kala Indie Studio</h5>
+                            <p class="text-muted small mb-0">Studio pengembangan game horor dan romansa lokal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-white text-center">
+        <p class="mb-0 small">Web Profile &copy; 2026 | Luthfi Adi Harianto - Bangga dari Pati</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
