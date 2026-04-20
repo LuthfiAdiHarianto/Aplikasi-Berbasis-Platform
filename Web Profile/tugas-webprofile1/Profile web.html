@@ -11,13 +11,13 @@
             height: 100%;
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth; /* Tambahan: agar scroll halus */
+            scroll-behavior: smooth;
         }
 
         /* Background Kota Pati */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('Tugu-Bandeng-Kabupaten-Pati.jpg'); /* Gambar ikonik Gerbang Pati */
+                        url('Tugu-Bandeng-Kabupaten-Pati.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -45,32 +45,29 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 2px; /* Tambahan: agar ujung garis tumpul */
+            border-radius: 2px; 
         }
 
-        /* --- JGN HAPUS: INI BAGIAN UTAMA UNTUK MERAPIKAN FOTO ---
-           Saya hanya menambahkan CSS di sini untuk menargetkan img
-           di dalam struktur col-md-5 text-center yang sudah ada.
-        */
+      
         .col-md-5.text-center img {
-            width: 250px;           /* Ukuran lebar foto tetap */
-            height: 250px;          /* Ukuran tinggi foto tetap (sama dg width) */
-            object-fit: cover;      /* FOTO TIDAK GEpeng, dipotong pas di tengah */
-            object-position: center; /* Fokus pemotongan di tengah */
-            border-radius: 50%;      /* Lingkaran sempurna */
+            width: 250px;           
+            height: 250px;          
+            object-fit: cover;      
+            object-position: center; 
+            border-radius: 50%;     
             
             /* Bingkai dan Bayangan yang lebih estetis */
-            border: 8px solid white !important; /* Bingkai putih tebal */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important; /* Bayangan lembut namun tegas */
+            border: 8px solid white !important; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important; 
             
             /* Tambahan: animasi halus saat hover */
             transition: transform 0.3s ease;
         }
 
         .col-md-5.text-center img:hover {
-            transform: scale(1.05); /* Sedikit membesar saat kursor di atasnya */
+            transform: scale(1.05); 
         }
-        /* --------------------------------------------------------- */
+        
 
         .card {
             border: none;
@@ -92,7 +89,6 @@
             padding: 0.5em 1em; /* Tambahan: ruang badge lebih pas */
         }
         
-        /* Merapikan Footer */
         footer {
             margin-top: auto;
         }
