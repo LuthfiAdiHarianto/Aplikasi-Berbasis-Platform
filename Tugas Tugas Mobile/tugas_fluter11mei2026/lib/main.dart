@@ -1,22 +1,88 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import package fluter/material.dart;
 
-main () => runApp (fluter1());
 
-class fluter1 extends StatelesWidget {
+void main() {
+  runApp(const AplikasiPraktikum());
+}
+
+class AplikasiPraktikum extends StatelessWidget {
+  const AplikasiPraktikum({super.key});
+
   @override
-  Widget build (BuildContext context) {
-    return MaterialApp (
-      title: "Flutter 1",
-      home: Scaffold (
-        appBar: AppBar (
-          title: Text ("Ini Aplikasi Flutter saya"),
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Poster & Page Skor'),
+          backgroundColor: Colors.blue,
         ),
-        body: Center (
-          child: Text ("Ini data saya"),
-        ),
-      ),
+        body: const PenghitungMahasiswa()
+      )
+    );
+  } 
+}
+
+class PenghitungMahasiswa extends StatefulWidget {
+  const PenghitungMahasiswa({super.key});
+
+  @override
+  State<PenghitungMahasiswa> createState() => _PenghitungMahasiswaState();
+}
+
+class _PenghitungMahasiswaState extends State<PenghitungMahasiswa> {
+  int jumlahHadir = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Jumlah Praktikan ABP yang Hadir:',
+            style: GoogleFonts.poppins(
+              fontSize: 24,
+              fontWeight: FontWeight.bold
+            )
+          ),
+          Text(
+            '$jumlahHadir',
+            style: const TextStyle(fontSize: 60, fontWeight: FontWeight.bold)
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                jumlahHadir++;
+              });
+            },
+            child: const Text('Tambah Mahasiswa')
+          )
+        ]
+      )
     );
   }
 }
+
+
+
+// import 'package:flutter/material.dart';
+
+// main() => runApp(flutter1());
+
+// class flutter1 extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(title: Text('Ini judul saya')), 
+//         body: Center(
+//           child: OutlinedButton(onPressed: onPressed, child: child)
+//         )
+//       )
+//     );
+//   }
+// }
