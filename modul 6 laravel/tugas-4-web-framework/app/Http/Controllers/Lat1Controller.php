@@ -20,7 +20,8 @@ class Lat1Controller extends Controller
         $data['daf_mhs'] = array(
             array("nama" => "Agus", "asal" => "Bandung"),
             array("nama" => "Budi", "asal" => "Jakarta"),
-            array("nama" => "Roni", "asal" => "Surabaya")
+            array("nama" => "Roni", "asal" => "Surabaya"),
+            array("nama" => "Luthfi", "asal" => "Pati"),
         );
         
         return view('v_latihan2', $data);
