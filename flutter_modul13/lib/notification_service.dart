@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart'; // Tambahkan ini untuk kIsWeb
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 /// Class ini bertugas menangani semua hal terkait Local Notification.
@@ -8,11 +9,13 @@ class NotificationService {
   factory NotificationService() => _instance;
   NotificationService._internal();
 
-  final FlutterLocalNotificationsPlugin _notificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  // Gunakan dynamic agar compiler Chrome tidak menampilkan error Type Not Found
+  final dynamic _notificationsPlugin = FlutterLocalNotificationsPlugin();
 
   /// Inisialisasi plugin notifikasi, dipanggil sekali saat app start.
   Future<void> init() async {
+    if (kIsWeb) return; // Lewati inisialisasi jika berjalan di Web Chrome
+
     const AndroidInitializationSettings androidSettings =
         AndroidInitializationSettings('@mipmap/ic_launcher');
 
@@ -25,6 +28,8 @@ class NotificationService {
 
   /// Menampilkan notifikasi setiap kali nilai counter bertambah.
   Future<void> showCounterNotification(int counterValue) async {
+    if (kIsWeb) return; // Lewati notifikasi jika berjalan di Web Chrome
+
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
       'counter_channel', // channel id
@@ -39,7 +44,7 @@ class NotificationService {
     );
 
     await _notificationsPlugin.show(
-      0, // id notifikasi (boleh tetap 0 agar notifikasi lama tertimpa)
+      0, // id notifikasi
       'Counter Update',
       'Nilai counter saat ini: $counterValue',
       notificationDetails,
